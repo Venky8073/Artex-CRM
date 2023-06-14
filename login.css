@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    align-content: center;
+    background-color: rgb(58, 56, 56);
+    /* background-image: url('/images/login2.webp'); */
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.login-page{
+    margin: auto;
+    margin-top: 200px;
+    border: 1px solid;
+    width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: -2px 0 9px 3px #1246de;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 30px;
+    margin: 30px;
+    border-radius: 30px;
+    opacity: 1.0;
+}
+
+input{
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    /* box-shadow: -2px 0 9px 11px #1246de; */
+
+}
+
+.head{
+    /* margin: 30px; */
+    margin-top: 20px;
+    color: white;
+}
+
+.input{
+    background: none;
+    font-size: 20px;
+    color: white;
+    
+}
+
+.input:hover{
+    /* margin-left: 40px;
+    width: 300px; */
+    /* background-color: aqua; */
+    /* border: none; */
+}

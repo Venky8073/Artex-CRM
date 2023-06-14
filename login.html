@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://unused-css.com/tools/box-shadow-generator?p=11Ymc9Yi0ycHggMCA5cHggM3B4ICMxMjQ2ZGU">
+</head>
+<body>
+    <div class="login-page">
+        <div class="head"><h2>LOGIN</h2></div>
+        <form action="">
+           
+        <input type="text" placeholder="User name" id="user-name" class="input">
+        <input type="password" placeholder="Password" id="Password" class="input">
+        <input type="submit" value="Submit" id="submit" class="input">
+    </form>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    let form=document.querySelector('form')
+
+    let user=document.querySelector('#user-name')
+    let password=document.querySelector('#Password')
+
+    let name='admin'
+
+    let count=1
+    form.addEventListener('submit',function(){
+        event.preventDefault()
+        localStorage.setItem('value',count)
+        if(user.value==name){
+            if(password.value==name){
+                console.log(user.value,password.value)
+                window.location.href='index.html'
+            }
+            else{
+                alert('Wrong Password')
+            }
+        }
+        else{
+            alert('Wrong User-name')
+        }
+    })
+</script>
