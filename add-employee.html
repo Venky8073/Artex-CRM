@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add employee</title>
+    <link rel="stylesheet" href="/add-employee.css">
+</head>
+<body>
+    <div class="main">
+        <form action="">
+        <h1>Add employees</h1>
+            
+            <div>
+                <label for="">Name :</label>
+                <input type="text" id="name">
+            </div>
+
+            <div>
+                <label for="">Position :</label>
+                <input type="text" id="position">
+            </div>
+            <div>
+                <label for="">Department :</label>
+                <input type="text" id="department">
+            </div>
+            
+            <div>
+                <label for="">Status :</label>
+                <input type="text" id="status">
+            </div>
+            
+            <div>
+                <label for="">Phone :</label>
+                <input type="number" id="phone">
+            </div>
+            
+            <div>
+                <label for="">Email :</label>
+                <input type="email" id="email">
+            </div>
+            <div>
+                <input type="button" id="Add" value="Add" style="text-align: center;">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+<script>
+    let name=document.querySelector('#name')
+    let position=document.querySelector('#position')
+    let dept=document.querySelector('#department')
+    let status=document.querySelector('#status')
+    let phone=document.querySelector('#phone')
+    let email=document.querySelector('#email')
+
+    let form=document.querySelector('#Add')
+
+    let ls=JSON.parse(localStorage.getItem('data'))||[]
+    // ls=JSON.parse(ls)
+
+
+    form.addEventListener('click',()=>{
+        let obj={
+            name:name.value,
+            position:position.value,
+            dept:dept.value,
+            status:status.value,
+            phone:phone.value,
+            email:email.value
+        }
+        ls.push(obj)
+        localStorage.setItem('data', JSON.stringify(ls))
+    })
+</script>
+    

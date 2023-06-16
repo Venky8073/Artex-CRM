@@ -1,0 +1,85 @@
+.employee .sort{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding-left: 20px;
+    padding: 25px;
+}
+
+
+/* .employee .sort .name-sort{
+    width: 25%;
+    display: flex;
+    justify-content: space-around;
+} */
+
+.employee .sort .name-sort input{
+    border: 1px solid rgb(207, 205, 205);
+    padding: 8px;
+    background: none;
+    border-radius: 6px;
+}
+
+.employee .sort .name-sort input:nth-child(1){
+    width: 250px;
+}
+
+.employee .sort .status-sort label,.employee .sort .status-sort select{
+    border: 1px solid rgb(207, 205, 205);
+    padding: 8px;
+    background: none;
+    border-radius: 6px;
+}
+
+/* -------------employeeee list----- */
+.list{
+    width: 100%;
+    background-color: white;
+    /* padding: 10px; */
+}
+
+.list table{
+    border-collapse: collapse;
+    /* border-top: 1px solid; */
+    /* border-bottom:1px solid ; */
+}
+
+.list table, tr, td{
+    padding: 20px;
+    font-size: 15px;
+    
+}
+
+.list thead,tbody{
+    /* background-color: rgb(137, 137, 226); */
+    /* padding: 10px; */
+    border-top: 1px solid rgb(197, 195, 195);
+    border-bottom: 1px solid rgb(197, 195, 195);
+}
+
+.list thead{
+    color: rgb(151, 149, 149);
+}
+
+.list tbody{
+    font-weight: 600;
+}
+
+.list table thead tr td:nth-child(1){
+    width: 27%;
+}
+.list table thead tr td:nth-child(2){
+    width: 12%;
+}
+.list table thead tr td:nth-child(3){
+    width: 12%;
+}
+.list table thead tr td:nth-child(5){
+    width: 12%;
+}
+.list table thead tr td:nth-child(6){
+    width: 15%;
+}
+.list table thead tr td:nth-child(4){
+    width: 5%;
+}
