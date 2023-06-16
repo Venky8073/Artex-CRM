@@ -142,7 +142,7 @@ h5{
     justify-content: space-between;
     /* margin: 10px; */
     padding: 0 20px 0 20px;
-    border: 1px solid grey;
+    border-bottom: 1px solid rgb(207, 205, 205);
 }
 
 .main .head button{

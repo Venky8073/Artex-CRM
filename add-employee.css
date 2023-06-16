@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /* background-image: url('/images/pexels-craig-adderley-1563356.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* opacity: 0.2; */
+    /* opacity: 0.6 ; */
+}
+
+.main{
+    background-image: url('/images/pexels-craig-adderley-1563356.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    /* opacity: 0.6; */
+    /* border: 1px solid; */
+    /* margin: auto; */
+    /* margin-top: 50px; */
+    /* display: flex; */
+    /* align-items: center; */
+}
+
+h1{
+    margin: 40px;
+}
+.main form{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+    color: white;  
+    font-weight: 800;
+    width: 40%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    
+}
+
+.main form div{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    color: white;
+    font-size: 20px;
+    /* opacity: 0.6; */
+    /* color: black; */
+}
+
+.main form div input{
+    padding: 10px;
+    background-color: white;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+#submit input{
+    background-color: rgb(22, 56, 3);
+    margin-bottom: 30px;
+    color: aliceblue;
+    font-weight: 700;
+    font-size: 20px;
+}
