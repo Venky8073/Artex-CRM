@@ -12,9 +12,10 @@ body{
 }
 
 .main{
-    background-image: url('/images/pexels-craig-adderley-1563356.jpg');
+    background-image: url('https://media.istockphoto.com/id/1307111334/photo/the-interior-has-a-armchair-on-empty-dark-wall-background.jpg?s=170667a&w=0&k=20&c=0N47Ax-y81khOVH7MWH8KiVhFjqh0qsCvBgiKf-3rAU=');
     background-repeat: no-repeat;
     background-size: cover;
+    /* background-color: rgb(107, 106, 106); */
     width: 100%;
     height: 100vh;
     display: flex;

@@ -14,13 +14,15 @@
         <div class="aside">
             <div class="top">
                 <div class="logo">
-                    <img src="/images/logo4.png" alt="">
+                    <!-- <img src="/images/logo4.png" alt=""> -->
                     <h2>ARTAX-<spam class="danger">CRM</spam></h2>
                 </div>
                 <div class="close">
-                    <span class="material-symbols-sharp">
-                        close
-                    </span>
+                    <button id="close">
+                        <span class="material-symbols-sharp">
+                            close
+                        </span>
+                    </button>
                 </div>
             </div>
 
@@ -91,7 +93,7 @@
                 <div class="top-btn">
                  
                     <button>
-                        <span class="material-symbols-outlined">
+                        <span class="material-symbols-outlined" id="slide">
                             menu
                         </span>
                     </button>
@@ -115,16 +117,16 @@
                             search
                             </span> -->
                         <input type="text" id="name" placeholder="Search by name">
-                        <input type="button" value="Position" id="pos">
-                        <input type="button" value="Department">
+                        <input type="button" value="Search" id="search">
+                        <!-- <input type="button" value="Department"> -->
                     </div>
                     <div class="status-sort">
                         <label for="">status</label>
                         <select name="" id="status">
                             <option value="">status</option>
-                            <option value="active">Active</option>
-                            <option value="meeting">In a meeting</option>
-                            <option value="sick">Out sick</option>
+                            <option value="active">active</option>
+                            <option value="Inactive">Inactive</option>
+                            <!-- <option value="sick">Out sick</option> -->
                         </select>
                     </div>
                 </div>
@@ -146,7 +148,7 @@
                     </thead>
                     <tbody>
                         <!-- <tr>
-                            <td></td>
+                            <td>venky</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -189,5 +191,107 @@
         localStorage.removeItem('value')
     })
 
+</script>
+
+<script>
+    let ls=JSON.parse(localStorage.getItem('data'))
+
+    let tbody=document.querySelector('tbody')
+    let status=document.querySelector('#status')
+
+    status.addEventListener('change',function(){
+        if(status.value==''){
+            display(ls)
+        }
+        else{
+            let filter=ls.filter(function(e){
+                if(status.value==e.status){
+                    return e
+                }
+            })
+            display(filter)
+        }
+    })
+
+    // -----------search by name-------------
+
+    let search=document.querySelector('#search')
+    search.addEventListener('click',function(){
+        let name=document.querySelector('#name')
+        if(name.value==''){
+            display(ls)
+        }
+        else{
+            let filter=ls.filter((e)=>{
+                if(e.name==name.value){
+                    return e
+                }
+            })
+            display(filter)
+        }
+    })
+
+    display(ls)
+
+    function display(ls){
+        tbody.innerHTML=''
+        for(let i=0;i<ls.length;i++){
+            let tr=document.createElement('tr')
+
+            let name=document.createElement('td')
+            let position=document.createElement('td')
+            let department=document.createElement('td')
+            let status=document.createElement('td')
+            let phone=document.createElement('td')
+            let email=document.createElement('td')
+            let button=document.createElement('td')
+            let del=document.createElement('button')
+            del.innerText='Delete'
+            del.setAttribute('class','delete')
+            name.innerText=ls[i].name
+            position.innerText=ls[i].position
+            department.innerText=ls[i].dept
+            status.innerText=ls[i].status
+            phone.innerText=ls[i].phone
+            email.innerText=ls[i].email
+            button.append(del)
+            
+            if(status.innerText=='active'){
+                status.style.color='rgb(14, 185, 51)'
+            }
+            else if(status.innerText=='Inactive'){
+                status.style.color='rgb(202, 16, 16)'
+            }
+
+            del.addEventListener('click',function(){
+                let index=i
+                ls.splice(index,1)
+                // alert(ls[i].name)
+                localStorage.setItem('data',JSON.stringify(ls))
+                display(ls)
+            })
+            
+            tr.append(name,position,department,status,phone,email,button)
+            tbody.append(tr)
+        }
+    }
+
+    let slide=document.querySelector('#slide')
+
+    slide.addEventListener('click',function(){
+        // alert('lllll')
+        let aside=document.querySelector('.aside')
+        aside.style.display='block'
+    })
+
+    let clos=document.querySelector('#close')
+
+    clos.addEventListener('click',function(){
+        let aside=document.querySelector('.aside')
+
+        aside.style.display='none'
+
+    })
+    
 </script>
 
