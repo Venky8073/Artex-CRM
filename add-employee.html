@@ -62,16 +62,34 @@
 
 
     form.addEventListener('click',()=>{
-        let obj={
-            name:name.value,
-            position:position.value,
-            dept:dept.value,
-            status:status.value,
-            phone:phone.value,
-            email:email.value
+        if(name.value==''){
+            alert('Enter the name')
         }
-        ls.push(obj)
-        localStorage.setItem('data', JSON.stringify(ls))
+        else if(position.value==''){
+           alert('Enter the position')
+        }
+        else if(dept.value==''){
+            alert('Enter the Department')
+        }
+        else if(phone.value==''){
+            alert('Enter the Phone number')
+        }
+        else if(email.value==''){
+            alert('Enter the email')
+        }
+        else{
+            let obj={
+                name:name.value,
+                position:position.value,
+                dept:dept.value,
+                status:status.value,
+                phone:phone.value,
+                email:email.value
+            }
+            alert('Added succussfully')
+                ls.push(obj)
+                localStorage.setItem('data', JSON.stringify(ls))
+            }
     })
 </script>
     

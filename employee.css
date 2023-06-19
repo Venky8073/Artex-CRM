@@ -57,6 +57,10 @@
     border-bottom: 1px solid rgb(197, 195, 195);
 }
 
+tbody tr{
+    border-bottom: 1px solid rgb(197, 195, 195);
+}
+
 .list thead{
     color: rgb(151, 149, 149);
 }
@@ -66,10 +70,10 @@
 }
 
 .list table thead tr td:nth-child(1){
-    width: 27%;
+    width: 22%;
 }
 .list table thead tr td:nth-child(2){
-    width: 12%;
+    width: 17%;
 }
 .list table thead tr td:nth-child(3){
     width: 12%;
@@ -78,8 +82,16 @@
     width: 12%;
 }
 .list table thead tr td:nth-child(6){
-    width: 15%;
+    width: 23%;
 }
 .list table thead tr td:nth-child(4){
     width: 5%;
+}
+.delete{
+    background: none;
+    width: 100%;
+    background-color: rgb(202, 16, 16);
+    padding: 10px;
+    color: white;
+    font-weight: 900;
 }

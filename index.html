@@ -13,13 +13,15 @@
         <div class="aside">
             <div class="top">
                 <div class="logo">
-                    <img src="/images/logo4.png" alt="">
+                    <!-- <img src="/images/logo4.png" alt=""> -->
                     <h2>ARTAX-<spam class="danger">CRM</spam></h2>
                 </div>
                 <div class="close">
-                    <span class="material-symbols-sharp">
-                        close
-                    </span>
+                    <button id="close">
+                        <span class="material-symbols-sharp">
+                            close
+                        </span>
+                    </button>
                 </div>
             </div>
 
@@ -90,7 +92,7 @@
                 <div class="top-btn">
                  
                     <button>
-                        <span class="material-symbols-outlined">
+                        <span class="material-symbols-outlined" id="slide">
                             menu
                         </span>
                     </button>
@@ -131,6 +133,31 @@
                     </div>
                 </div>
             </div>
+            <!-- pole graph -->
+            <div class="chart">
+                <div class="graph">
+                    <div>
+                        <div class="bar" style="height: 80%;"></div>
+                        <label for="">jan</label>
+                    </div>
+                    <div>
+                        <div class="bar" style="height: 50%;"></div>
+                        <label for="">feb</label>
+                    </div>
+                    <div>
+                        <div class="bar" style="height: 70%;"></div>
+                        <label for="">march</label>
+                    </div>
+                    <div>
+                        <div class="bar" style="height: 40%;"></div>
+                        <label for="">april</label>
+                    </div>
+                    <div>
+                        <div class="bar" style="height: 90%;"></div>
+                        <label for="">may</label>
+                    </div>
+                </div>
+            </div>
             
             
         </div>
@@ -162,4 +189,20 @@
         localStorage.removeItem('value')
     })
 
+    let slide=document.querySelector('#slide')
+
+    slide.addEventListener('click',function(){
+        // alert('lllll')
+        let aside=document.querySelector('.aside')
+        aside.style.display='block'
+    })
+
+    let clos=document.querySelector('#close')
+
+    clos.addEventListener('click',function(){
+        let aside=document.querySelector('.aside')
+
+        aside.style.display='none'
+
+    })
 </script>

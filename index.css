@@ -82,10 +82,17 @@ h5{
     display: flex;
     gap: 0.8rem;
     align-items: center;
+    margin-left: 20px;
 }
 
 .aside .close{
-    display: none;
+    /* display: none; */
+    padding-right: 20px;
+    /* background: none; */
+}
+
+.aside .close button{
+    background: none;
 }
 
 /* =============sidebar ===============*/
@@ -235,3 +242,44 @@ h5{
     padding: 10px;
     font-size: 35px;
 }
+
+/* ---------chart----------- */
+.chart{
+    background-color: white;
+    height: 57%;
+
+}
+.graph{
+    padding-top: 50px;
+    width:80%;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+
+}
+.chart .graph > div{
+    /* width: 100%;
+    height: 400px; */
+    /* margin-top: 30px; */
+    /* border: 1px solid #000; */
+    /* display: flex; */
+    /* flex-direction: row;  */
+    /* justify-content: space-around; */
+    align-items: baseline;
+    /* background-color: white; */
+    /* width: 10%; */
+    height: 260px;
+    /* display: flex; */
+    /* border: 1px solid; */
+    /* gap: 10px; */
+  } 
+
+
+  .bar {
+    width: 100%;
+    background-color: #007bff;
+    margin-right: 10px;
+    margin-bottom: 50px;
+    transition: height 0.3s ease;
+  }
