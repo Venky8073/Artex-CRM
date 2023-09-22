@@ -5,7 +5,7 @@
 body{
     display: flex;
     align-content: center;
-    background-color: rgb(58, 56, 56);
+    /* background-color: rgb(58, 56, 56); */
     /* background-image: url('/images/login2.webp'); */
     background-repeat: no-repeat;
     background-size: 100%;
@@ -45,13 +45,13 @@ input{
 .head{
     /* margin: 30px; */
     margin-top: 20px;
-    color: white;
+    /* color: white; */
 }
 
 .input{
     background: none;
     font-size: 20px;
-    color: white;
+    /* color: white; */
     
 }
 
