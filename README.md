@@ -44,8 +44,6 @@ You can just give your proper credential and login.
 It shows you the active students stats, total students stats. And your top 5 task of your todo list.
 
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zcf91ien48nbon0p0m18.png)
-
 
 
 #### Search :-
