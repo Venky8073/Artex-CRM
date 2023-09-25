@@ -1,8 +1,6 @@
 # loyal-elbow-6166
 
 
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z3of5c4tx1e5akdpzixq.png)
-
 
 
 
@@ -10,12 +8,12 @@
 # ARTAX-CRM
 It is basically a Customer Relationship Management Website. It use to connect people over a  Community. It was a solo project built by a team of five members in a span of 5 days.
 
-**Netlify :**  [Connect Website](https://connect-lms01.netlify.app/)
+**Netlify :**  [ARTAX Website](https://connect-lms01.netlify.app/)
 ## Tech Stack
 
 **Front-End:** HTML | CSS | JavaScript
 
-**Back-End [API] :** localstorage 
+**Back-End :** localstorage 
 
 
 ## Features
@@ -26,7 +24,7 @@ It is basically a Customer Relationship Management Website. It use to connect pe
 - Cross Platform
 
 **Admin Page**
-- Add & Update & Delete Cutomer Data
+- Add & Delete Customer Data
 
 
 
