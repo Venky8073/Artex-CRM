@@ -30,7 +30,6 @@ It is basically a Customer Relationship Management Website. It use to connect pe
 
 ## Website - Screenshots
 
-### Login and Signup Page:-
 
 #### Login Part :-
 
