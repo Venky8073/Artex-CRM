@@ -11,11 +11,13 @@
     <div class="login-page">
         <div class="head"><h2>LOGIN</h2></div>
         <form action="">
-           
-        <input type="text" placeholder="User name" id="user-name" class="input">
-        <input type="password" placeholder="Password" id="Password" class="input">
-        <input type="submit" value="Submit" id="submit" class="input">
-    </form>
+            <input type="text" placeholder="User Email" id="user-email" class="input">
+            <input type="password" placeholder="Password" id="Password" class="input">
+            <input type="submit" value="Submit" id="submit" class="input">
+        </form>
+        <div>
+            <p>If not Registered <a href="/register.html">!! Register</a></p>
+        </div>
     </div>
     
 </body>
@@ -24,7 +26,7 @@
 <script>
     let form=document.querySelector('form')
 
-    let user=document.querySelector('#user-name')
+    let user=document.querySelector('#user-email')
     let password=document.querySelector('#Password')
 
     let name='admin'
@@ -33,17 +35,31 @@
     form.addEventListener('submit',function(){
         event.preventDefault()
         localStorage.setItem('value',count)
-        if(user.value==name){
-            if(password.value==name){
-                console.log(user.value,password.value)
-                window.location.href='index.html'
+
+        getData(user.value)
+    })
+
+    async function getData(email){
+        try{
+            let api= await fetch(`http://localhost:8000/user?email=${email}`)
+            let res= await api.json()
+            let data=res[0]
+            console.log(data)
+            if(user.value==data.email){
+                if(password.value==data.password){
+                    console.log(user.value,password.value)
+                    window.location.href='index.html'
+                }
+                else{
+                    alert('Wrong Password')
+                }
             }
             else{
-                alert('Wrong Password')
+                alert('Wrong User-name')
             }
         }
-        else{
-            alert('Wrong User-name')
+        catch(err){
+            console.log(err)
         }
-    })
+    }
 </script>

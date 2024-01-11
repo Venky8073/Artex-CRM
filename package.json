@@ -1,0 +1,23 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "It is basically a Customer Relationship Management Website. It use to connect people over a  Community. It was a solo project built by a team of five members in a span of 5 days.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "json-server --watch db.json --port 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Venky8073/Artex-CRM.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Venky8073/Artex-CRM/issues"
+  },
+  "homepage": "https://github.com/Venky8073/Artex-CRM#readme",
+  "dependencies": {
+    "chart.js": "^4.4.1"
+  }
+}

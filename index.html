@@ -79,7 +79,7 @@
                     <span class="material-symbols-sharp">
                         logout
                     </span>
-                    <h3 >Logout</h3>
+                    <h3 id="logout">Logout</h3>
                 </a>
 
             </div>
@@ -134,34 +134,121 @@
                 </div>
             </div>
             <!-- pole graph -->
-            <div class="chart">
-                <div class="graph">
-                    <div>
-                        <div class="bar" style="height: 80%;"></div>
-                        <label for="">jan</label>
-                    </div>
-                    <div>
-                        <div class="bar" style="height: 50%;"></div>
-                        <label for="">feb</label>
-                    </div>
-                    <div>
-                        <div class="bar" style="height: 70%;"></div>
-                        <label for="">march</label>
-                    </div>
-                    <div>
-                        <div class="bar" style="height: 40%;"></div>
-                        <label for="">april</label>
-                    </div>
-                    <div>
-                        <div class="bar" style="height: 90%;"></div>
-                        <label for="">may</label>
-                    </div>
+            <div>
+                <div>
+                    <!-- <input type="text" id="month" placeholder="Month" class="chart_input"> -->
+                    <select name="" id="month" class="chart_input">
+                        <option value="">Select Month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="Auguest">Auguest</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                    <input type="text" id="attendance" placeholder="Attendance" class="chart_input">
+                    <input type="text" id="performance" placeholder="Performance" class="chart_input">
+                    <button id="adddata">ADD DATA</button>
+                    <button id="remove">REMOVE DATA</button>
+
+                </div>
+                <canvas id="myChart">
+        
+                </canvas>
+        
+                <div>
                 </div>
             </div>
             
             
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script type="text/javascript">
+        var ctx, chart
+
+        window.addEventListener('load',function(){
+
+            // adding the data
+            let btn=document.getElementById('adddata')
+            btn.addEventListener('click',()=>{
+                let month=document.getElementById('month').value
+                let attendance=document.getElementById('attendance').value
+                let performance=document.getElementById('performance').value
+                let dataObj={month,attendance,performance}
+                console.log(dataObj)
+                addData(chart,dataObj)
+            })
+
+            // reming the last data
+            let remove=document.getElementById('remove')
+            remove.addEventListener('click',()=>{removeData(chart)})
+
+
+            ctx=document.getElementById('myChart')
+            
+            chart=new Chart(ctx,{
+                type:'bar',
+                data:{
+                    labels:["January","February","March","April","May","June"],
+                    datasets:[{
+                        label:'attendance',
+                        data:[100,40,60,80,67,70],
+                        backgroundColor:chartColor()
+                    },{
+                        label:'performnace',
+                        data:[50,35,40,65,50,70],
+                        backgroundColor:chartColor()
+                    }],
+                    borderWidth:1
+                },
+                options:{
+                    scales:{
+                        yAxes:[
+                            {
+                                ticks:{
+                                    beginAtZero:true
+                                }
+                            }
+                        ]
+                    }
+                }
+            })
+        })
+
+        // adding tha data 
+        
+
+        function addData(chart,{month,attendance,performance}){
+            chart.data.labels.push(month)
+            chart.data.datasets[0].data.push(attendance)
+            chart.data.datasets[1].data.push(performance)
+            chart.update()
+        }
+        // ------------------------------------
+
+        // removing the data
+        function removeData(chart){
+            chart.data.labels.pop()
+            chart.data.datasets[0].data.pop()
+            chart.data.datasets[1].data.pop()
+            chart.update()
+        }
+
+        function randonGen(n){
+            return Math.floor(n*Math.random())
+        }
+
+        function chartColor(){
+            return`rgb(${randonGen(255)},${randonGen(255)},${randonGen(40)},${randonGen(40)})`
+        }
+    </script>
 </body>
 </html>
 

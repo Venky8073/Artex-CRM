@@ -62,7 +62,7 @@ h5{
 } */
 
 .aside{
-    height: 100vh;
+    height: 100%;
     background-color: rgb(224, 222, 222);
     width: 20%;
     /* margin: auto; */
@@ -98,7 +98,7 @@ h5{
 /* =============sidebar ===============*/
 .aside .sidebar{
     /* background: white; */
-    height: 86vh;
+    height: 125vh;
     position: relative;
     top: 3rem;
 }
@@ -125,9 +125,13 @@ h5{
 
 .aside .sidebar a:last-child{
     position: absolute;
-    bottom: 2rem;
+    bottom: 3rem;
     width: 100%;
     /* border-top: 2px solid rgb(161, 158, 158); */
+}
+#logout{
+    font-size: 30px;
+    font-weight: 900;
 }
 
 .aside .sidebar a:hover{
@@ -168,6 +172,30 @@ h5{
 
 .main .head .top-btn button:nth-child(1){
     border: none;
+}
+
+/* -------------------chart--------------- */
+
+.chart_input{
+    width: 200px;
+    border: 1px solid ;
+    padding: 10px;
+}
+
+#adddata{
+    border-radius: 30px;
+    background-color: green;
+    color: white;
+    padding: 15px;
+    width: 200px;
+}
+
+#remove{
+    border-radius: 30px;
+    background-color: rgb(122, 8, 8);
+    color: white;
+    padding: 15px;
+    width: 200px;
 }
 
 /* -----------key indicators ----------- */

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artex-CRM</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://unused-css.com/tools/box-shadow-generator?p=11Ymc9Yi0ycHggMCA5cHggM3B4ICMxMjQ2ZGU">
+</head>
+<body>
+    <div class="login-page">
+        <div class="head">
+            <h2>Register Form</h2>
+        </div>
+
+            <form id="form" >
+                <input type="text" id="name" placeholder="Name" class="input">
+                <input type="text" id="email" placeholder="Email" class="input">
+                <input type="password" id="password" placeholder="Password" class="input"/>
+                <input type="submit" value="Submit" class="input">
+            </form>
+        <div>
+            <p>If Registered <a href="/login.html">!! Login</a></p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let name=document.getElementById("name")
+    let email=document.getElementById('email')
+    let password=document.getElementById('password')
+
+    let form=document.getElementById('form')
+
+    form.addEventListener("submit",function(){
+        event.preventDefault()
+
+        let userData={
+            name:name.value,
+            email:email.value,
+            password:password.value
+        }
+        console.log(userData)
+        // postData(userData)
+        fetch(`http://localhost:8000/user`,{
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify(userData)
+            })
+            .then((res)=>{res.json()})
+            .then((res)=>{alert('Registered succussfully')})
+            .then((a)=>{window.location.href="login.html"})
+            .catch((err)=>{alert("fail")})
+    })
+</script>
